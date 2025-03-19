@@ -1,7 +1,7 @@
 ipykernel==6.29.5
 pandas==2.2.3
 numpy==2.2.3
-torch==2.6.0+cpu
+torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 tqdm==4.67.1
 pillow==11.1.0
 scikit-learn==1.6.1
@@ -10,3 +10,7 @@ datasets==3.3.0
 argparse==1.1
 accelerate==1.4.0
 matplotlib==3.10.0
+
+##
+pylint
+black
