@@ -4,11 +4,26 @@
 #Import libraries
 from src.image_recognition import image_label_detector, choose_label
 from src.poem_generator import poem_generator
+from transformers import GPT2Tokenizer,GPT2LMHeadModel
+
+#Initialize model
+
+
 
 # Define paths
-project_folder_path="C:/Users/Annek/Documents/pytho exos/Phoetry/Phoetry_2"
+project_folder_path="./"
 images_path=project_folder_path+"/images"
 model_path=project_folder_path+"/trained_model/poet-gpt2"
+
+model_name='gpt2'
+tokenizer=GPT2Tokenizer.from_pretrained(model_name)
+model=GPT2LMHeadModel.from_pretrained(model_name)
+
+model.save_pretrained(model_path)
+tokenizer.save_pretrained(model_path)
+
+tokenizer=GPT2Tokenizer.from_pretrained(model_path)
+model=GPT2LMHeadModel.from_pretrained(model_path)
 
 # Proposed labels
 labels=["tree","flower","sunset","sunrise","cloud","mountain","beach","river","lake","waterfall","forest","grassland","desert","rain","snow",
